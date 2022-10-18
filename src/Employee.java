@@ -28,17 +28,16 @@ public class Employee {
 		}
 		return 0.0;
 	}
-	public double raiseSalary(double tax,double bonus) {
+	public double raiseSalary() {
 		int year= 2021-this.hireYear;
-		double newSalary=this.salary-tax+bonus;
 		if(year<10) {
-			return newSalary*0.5;
+			return this.salary*0.5;
 		}
 		else if (year>9 && year<20){
-			return newSalary*0.10;
+			return this.salary*0.10;
 		}
 		else if (year>19){
-			return newSalary*0.15;
+			return this.salary*0.15;
 		}
 		return 0.0;
 		
@@ -50,9 +49,9 @@ public class Employee {
 		System.out.println("Hire Year: " + emp.hireYear);
 		System.out.println("Tax: " + emp.tax());
 		System.out.println("Bonus: "+ emp.bonus());
-		System.out.println("Raise Salary: " + emp.raiseSalary(emp.tax(), emp.bonus()));
+		System.out.println("Raise Salary: " + emp.raiseSalary());
 		System.out.println("Salary with bonus and tax: " + (emp.salary-emp.tax()+emp.bonus()));
-		System.out.println("Total Salary (bonus,tax and raise salary): " + (emp.salary-emp.tax()+emp.bonus()+emp.raiseSalary(emp.tax(), emp.bonus())));
+		System.out.println("Total Salary: " + (emp.salary-emp.tax()+emp.bonus()+emp.raiseSalary()));
 		
 		
 	}
